@@ -16,13 +16,13 @@ import java.nio.file.StandardCopyOption;
 public class UpdateChecker implements Runnable {
 
     /** The frequency in seconds to check for updates */
-    public static final long CHECK_UPDATE_FREQUENCY = 10*60; // 10 minutes
+    public static final long CHECK_UPDATE_FREQUENCY = 60*60*24; // 1 day
 
     /** The url to the jenkins last build information */
-    public static final String LAST_BUILD_URL = "https://ci.viaversion.com/job/ViaVersion/lastBuild/api/json?random=%f";
+    public static final String LAST_BUILD_URL = "https://ci.viaversion.com/job/ViaVersion-Java8/lastBuild/api/json?random=%s";
 
     /** The url to download the viaversion jar from */
-    public static final String DOWNLOAD_URL = "https://ci.viaversion.com/job/ViaVersion/lastBuild/artifact/%s";
+    public static final String DOWNLOAD_URL = "https://ci.viaversion.com/job/ViaVersion-Java8/lastBuild/artifact/%s";
 
     private ViaVersionAutoUpdate viaVersionAutoUpdate;
 
@@ -96,7 +96,7 @@ public class UpdateChecker implements Runnable {
      * @return A json string of the last build info
      */
     private String downloadLastBuildInfo() throws IOException {
-        URL url = new URL(String.format(LAST_BUILD_URL, Math.random()));
+        URL url = new URL(String.format(LAST_BUILD_URL, String.valueOf(Math.random())));
         URLConnection connection = url.openConnection();
         // Spoof a user-agent, jenkins doesn't like the java default
         connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36");

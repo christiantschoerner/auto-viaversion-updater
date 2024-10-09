@@ -1,4 +1,6 @@
-name: ViaVersionAutoUpdate
+name: ViaVersionAutoUpdate-CLDE
 version: '${project.version}'
 main: me.adarsh.autoupdate.AutoUpdate
-author: [ Adarsh ]
+author: [ Adarsh, Chriis ]
+depend:
+  - CoreAPI

@@ -27,14 +27,6 @@ public class AutoUpdate extends JavaPlugin implements IPlugin {
 
     @Override
     public void restart() {
-        try {
-            // Use spigot's restart() method if it exists
-            if (getServer().getClass().getMethod("spigot") != null) {
-                getServer().spigot().restart();
-                return;
-            }
-        } catch (NoSuchMethodException expected) {}
-
         // Otherwise assume the server knows how to restart itself
         getServer().shutdown();
     }

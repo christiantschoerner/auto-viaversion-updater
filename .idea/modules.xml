@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AutoUpdate.iml" filepath="$PROJECT_DIR$/AutoUpdate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViaVersionAutoUpdate.iml" filepath="$PROJECT_DIR$/ViaVersionAutoUpdate.iml" />
     </modules>
   </component>
 </project>
